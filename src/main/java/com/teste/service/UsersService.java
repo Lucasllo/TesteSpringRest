@@ -5,23 +5,13 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.teste.entity.User;
-import com.teste.repository.UsersRepository;
 
 @Component
-public class UsersService {
+public interface UsersService {
 	
-	private UsersRepository usersRepository;
 
-    public UsersService(UsersRepository usersRepository) {
-        this.usersRepository = usersRepository;
-    }
-
-    public List<User> getUsers() {
-        return usersRepository.findAll();
-    }
+    public List<User> getUsers();
     
-    public User	 saveUser(User users) {
-    	return usersRepository.save(users);
-    }
+    public User saveUser(User users);
 
 }
